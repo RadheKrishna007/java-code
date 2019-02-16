@@ -56,7 +56,7 @@ public class CalculatorPhase4 {
         	System.out.println("multiplication");
             break;
         default:
-            System.out.println("Illegal Operation");
+            System.out.println("Operation Not Available");
 
         } 
 
