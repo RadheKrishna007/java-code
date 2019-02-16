@@ -2,27 +2,27 @@ import java.util.Scanner;
 
 public class CalculatorPhase4 {
 
-	public static float sum(float b, float c)
+	public float sum(float b, float c)
 	{
 		return b+c;
 	}
 
-	public static float subtract(float b, float c)
+	public float subtract(float b, float c)
 	{
 	 return b-c;
 	}
 	
-	public static float divide(float b, float c)
+	public float divide(float b, float c)
 	{
 		return b/c;
 	}
 	
-	public static float multiply(float b, float c)
+	public float multiply(float b, float c)
 	{
 	 return b*c;
 	}
 	
-	public static float fnum()
+	public float fnum()
 	{
 		Scanner sc = new Scanner(System.in);	
 		System.out.println("enter your number");
@@ -30,7 +30,7 @@ public class CalculatorPhase4 {
 		return a;
 	}
 	
-	public static float snum()
+	public float snum()
 	{
 		Scanner sc = new Scanner(System.in);	
 		System.out.println("enter your number");
@@ -38,7 +38,7 @@ public class CalculatorPhase4 {
 		return a;
 	}
 	
-	public static int select() {
+	public int select() {
         Scanner input = new Scanner(System.in);
 
         int choose = input.nextInt();
@@ -56,14 +56,14 @@ public class CalculatorPhase4 {
         	System.out.println("multiplication");
             break;
         default:
-            System.out.println("Operation Not Available");
+            System.out.println("Illegal Operation");
 
         } 
 
         return choose;
     }
 	
-	public static float calculation(int choose, float n1, float n2) {
+	public float calculation(int choose, float n1, float n2) {
         float result;
         if (choose == 1)
            result = sum(n1,n2);
@@ -81,25 +81,25 @@ public class CalculatorPhase4 {
 	{
 	//	String operation = "add";
 		
-	//	CalculatorPhase4 obj = new CalculatorPhase4();
-		float a = fnum();
+		CalculatorPhase4 obj = new CalculatorPhase4();
+		float a = obj.fnum();
 		System.out.println("for addition press 1");
 		System.out.println("for subtraction press 2");
 		System.out.println("for division press 3");
 		System.out.println("for multiplication press 4");
-		int operator = select();
-		float b = snum();
-		float result = calculation(operator, a, b);
+		int operator = obj.select();
+		float b = obj.snum();
+		float result = obj.calculation(operator, a, b);
 		System.out.println(result);
 		while(true)
 		{
-			b = snum();
+			b = obj.snum();
 			System.out.println("for addition press 1");
 			System.out.println("for subtraction press 2");
 			System.out.println("for division press 3");
 			System.out.println("for multiplication press 4");
-			operator = select();
-			result = calculation(operator, result, b);
+			operator = obj.select();
+			result = obj.calculation(operator, result, b);
 			System.out.println(result);
 		}
 			
